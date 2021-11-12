@@ -1,9 +1,6 @@
 package TxtBookOOP.TBInheritance;
 
-public class CommissionEmployee {
-    // private access modifier will not allow access from inheriting class,
-    // must be changed to protected, see CommissionEmployee2.java
-    // or by using getter and setter methods
+public class CommissionEmployee4 {
     private String firstName;
     private String lastName;
     private String niNumber;
@@ -11,13 +8,15 @@ public class CommissionEmployee {
     private double commissionRate; //commission percentage
 
     //five argument constructor
-    public CommissionEmployee(String first, String last, String nin, double sales, double rate){
+    public CommissionEmployee4(String first, String last, String nin, double sales, double rate){
         //implicit call to Object constructor occurs here
         firstName = first;
         lastName = last;
         niNumber = nin;
         setGrossSales(sales); //validate and store gross sales
         setCommissionRate(rate); //validate and store commission rate
+
+        System.out.printf("\nCommissionEmployee4 constructor:\n%s\n", this);
     } //end constructor
 
     public void setFirstName( String first){
@@ -51,13 +50,14 @@ public class CommissionEmployee {
         return commissionRate;
     }
     public double earnings(){
-        return commissionRate * grossSales;
+        return getCommissionRate() * getGrossSales();
     }
     public String toString(){
         return String.format("%s: %s %s\n%s: %s\n%s: %.2f\n%s: %.2f",
-                "commission employee", firstName, lastName,
-                "NI Number", niNumber,
-                "gross sales", grossSales,
-                "commission rate", commissionRate);
+                "commission employee", getFirstName(), getLastName(),
+                "NI Number", getNiNumber(),
+                "gross sales", getGrossSales(),
+                "commission rate", getCommissionRate());
     }
+
 }
