@@ -3,7 +3,7 @@ package TxtBookOOP.TBInheritance;
 public class CommissionEmployee {
     // private access modifier will not allow access from inheriting class,
     // must be changed to protected, see CommissionEmployee2.java
-    // or by using getter and setter methods
+    // or by using getter and setter methods as in CommissionEmployee3
     private String firstName;
     private String lastName;
     private String niNumber;
