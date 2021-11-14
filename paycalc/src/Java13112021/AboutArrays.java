@@ -1,5 +1,9 @@
 package Java13112021;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+
 public class AboutArrays {
     public static void main(String[] args) {
         /*
@@ -25,7 +29,7 @@ public class AboutArrays {
         // first element is with index 0
         String firstStudent = studentName[0];
         System.out.println("First student is: " + firstStudent);
-        //last student is at index 3 or (array lenght - 1)
+        //last student is at index 9 or (array lenght - 1)
         int maxIndex = studentName.length - 1;
         String lastStudent =  studentName[maxIndex];
         System.out.println("Last student is: " + lastStudent);
@@ -120,5 +124,36 @@ public class AboutArrays {
             System.out.println("count: " + i); //print count value
             i++;                               //increment by 1
         }
+
+        System.out.println();   //just an empty line
+        LocalDate localDate = LocalDate.now(); // java will check local date on our computer and save in localDate variable as object of type LocalDate
+        //LocalDate localDate = LocalDate.of(2021,11,4); // comment out previous line with "//"  and uncomment this line to change today's date fake another Diwali
+        DateTimeFormatter todaysDate = DateTimeFormatter.ofPattern("dd-MMM-yyyy"); // changes the way our date is displayed to using 3 letter abbreviations for months
+        String formattedDate = localDate.format(todaysDate); // here we format object of localDate using rules from todaysDate and saving as String
+        System.out.println("Today is " + localDate.toString() + " (what we started with)");
+        System.out.println("We want to check for \"" + formattedDate + "\" in our switch statement.");
+
+        String holiday[] = {"Diwali", "Christmas", "Eid", "Good Friday", "Easter"}; // array of holidays
+        switch (formattedDate) { // magic
+            case "04-Nov-2021":
+                System.out.println("Happy " + holiday[0] + "!");
+                break;
+            case "24-Dec-2021":
+                System.out.println("Happy " + holiday[1] + "!");
+                break;
+            case "02-May-2022":
+                System.out.println(holiday[2] + " Mubarak!");
+                break;
+            case "14-Apr-2022":
+                System.out.println("Sad " + holiday[3] + " ? :(");
+                break;
+            case "17-Apr-2022":
+                System.out.println("Happy " + holiday[4] + "!");
+                break;
+            default: // default output if no holiday detected
+                System.out.println("Next holiday coming soon, have a nice day!");
+                break;
+        }
+
     }
 }
