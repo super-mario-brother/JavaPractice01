@@ -41,7 +41,7 @@ public class Homework1 {
         }
 
         // now mySet should be ready to print and we'll use Iterator class to do that
-        Iterator<Integer> myIterator = mySet.iterator();
+        Iterator<Integer> myIterator = mySet.iterator(); // new object myIterator of type Iterator with <Integer> values from mySet
         System.out.print("My set (no duplicates): ("); // just print beginning of the message
         while (myIterator.hasNext()){  // while loop will run as long as there is next element in our set iterator
             System.out.print(myIterator.next()); // print whatever is returned by myIterator.next()
@@ -49,7 +49,7 @@ public class Homework1 {
                 System.out.print(", ");
             }
         }
-        System.out.println(")"); // ... no more elements we can print closing bracket
+        System.out.println(")"); // ... no more elements, we can print closing bracket
         //homework printed  - no duplicated elements
     }
 
