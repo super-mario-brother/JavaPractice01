@@ -1,6 +1,7 @@
 package Java20112021;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -51,6 +52,25 @@ public class Homework1 {
         }
         System.out.println(")"); // ... no more elements, we can print closing bracket
         //homework printed  - no duplicated elements
+
+        // by Sonia
+        ArrayList<Integer> myList2 = new ArrayList<Integer>(Arrays.asList(0,2,5,3,5,7,7,8,3,4,6,8));
+        ArrayList<Integer> dupList2 = new ArrayList<Integer>();
+        HashSet<Integer> mySet2 = new HashSet<>();
+        for (Integer i: myList2){
+            System.out.println("MyList2: " + i);
+            if (mySet2.add(i) == false) {
+                dupList2.add(i);
+                //System.out.println("duplicate element: " + i);
+            }
+        }
+//        Iterator<Integer> myItSet2 = mySet2.iterator();
+//        while(myItSet2.hasNext()){
+//            System.out.println("mySet2: " + myItSet2.next());
+//        }
+        System.out.println("unique " + mySet2);
+        System.out.println("duplicates " + dupList2);
     }
+
 
 }
